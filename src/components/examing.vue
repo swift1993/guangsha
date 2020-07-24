@@ -76,19 +76,18 @@
         name: "examing",
         data(){
             return {
-                count:20,
-                radio:'',
-                centerDialog:false,
-                done:'20',
-                undo:'30',
-                timer:null,
-                show:true,
-                msec:10,
+                count:20,//题数
+                radio:'',//选择题答案
+                centerDialog:false,//手动交卷弹窗
+                done:'20',//已做题数
+                undo:'30',//未做题数
+                timer:null,//定时器开关
+                msec:10,//倒计时
                 h:'',
                 m:'',
                 s:'',
-                time:'02:00:00',
-                dialog:false
+                time:'02:00:00',//倒计时初始值
+                dialog:false,//自动交卷弹窗
             }
         },
         mounted() {

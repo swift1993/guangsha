@@ -5,20 +5,6 @@ import router from '@/router'
 
 // axios 配置
 axios.defaults.timeout = 50000 //设置接口响应时间
-// axios.defaults.baseURL = 'https://easy-mock.com/mock/' // 这是调用数据接口,公共接口url+调用接口名
-let httpUrl = window.location.host
-if (httpUrl.indexOf('.com') !== -1) {
-    console.log('生产环境', httpUrl)
-} else if (httpUrl.indexOf('.net') !== -1) {
-    console.log('测试环境', httpUrl)
-    axios.defaults.baseURL = 'http://www.test.com' // 这是调用数据接口,公共接口url+调用接口名
-} else if (httpUrl.indexOf('localhost:8088') !== -1) {
-    console.log('指定开发环境', httpUrl)
-    axios.defaults.baseURL = 'http://localhost:8088/'
-} else {
-    console.log('开发环境', httpUrl)
-    axios.defaults.baseURL = 'http://192.168.6.138:8080/' // 这是调用数据接口,公共接口url+调用接口名
-}
 
 // http request 拦截器，通过这个，我们就可以把Cookie传到后台
 axios.interceptors.request.use(
